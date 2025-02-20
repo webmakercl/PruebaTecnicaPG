@@ -56,6 +56,9 @@ namespace PruebaTecnicaPG.Controllers
             // del SP realizando la paginación mediante LINQ
             // que es similar al metodo de ef
 
+            //Tambien se podria estrcuturar en capas para usar mediante una clase command mediante Inyeccion de dependecia
+            //que utilice el SqlConnection , SqlCommand CommandType.StoredProcedure
+
             var clientes = await _context.Clientes
                 .OrderBy(c => c.Id)
                 .Skip((page - 1) * pageSize)
